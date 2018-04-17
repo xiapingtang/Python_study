@@ -18,11 +18,30 @@ git checkout -- 'file'
 # update the file in repository with the latest version
 git reset HEAD 'file' 
 # create new branch and point to the new branch
-git checkout -b 'branch'
+git checkout -b 'new'
+# create new branch from remote repository
+git checkout -b new origin/new
 # remove branch
 git branch -d 'branch'
-# merge 'branch' to current branch
+# merge 'branch' to current branch with fast-forward method
 git merge 'branch'
+# merge without fast-forward method
+git merge --no-ff 'branch'
+# push local master branch to remote origin branch
+git push origin master
+# set up tracking information between remote and local branch
+git branch --set-upstream branch-name origin/branch-name
+
+# save a snapshot of current file status
+git stash
+# list all the saved snapshot
+git stash list
+# recover the saved snapshot "ss1"
+git stash apply 'ss1'
+# delete the snapshot "ss1"
+git stash drop 'ss1'
+# recover the saved snapshot 'ss1' and then delete it
+git stash pop 'ss1'
 
 # create tag with name v0.1 and "message" for "commit id"
 git tag -a v0.1 -m "message" "commit id" 
