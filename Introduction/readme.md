@@ -23,8 +23,8 @@ git checkout -b 'branch'
 git branch -d 'branch'
 # merge 'branch' to current branch
 git merge 'branch'
-# history for version control including future commit
-git reflog
+# create tag with name v0.1 and "message" for "commit id"
+git tag -a v0.1 -m "message" "commit id" 
 
 # record file change in working directory to stage zone of repository
 git add 'file'
@@ -36,6 +36,11 @@ git branch
 git rm 'file'
 # history for version control
 git log
+# history for version control including future commit
+git reflog
 # file status of git directory
 git status
-
+# create .gitignore file for default untracked files
+see template at https://github.com/github/gitignore
+# define alias for git which is recored in ~/.gitconfig
+git config --global alias.st status
