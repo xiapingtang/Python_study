@@ -23,8 +23,19 @@ git checkout -b 'branch'
 git branch -d 'branch'
 # merge 'branch' to current branch
 git merge 'branch'
+
 # create tag with name v0.1 and "message" for "commit id"
 git tag -a v0.1 -m "message" "commit id" 
+# delete tag v0.1
+git tag -d v0.1
+# push tag v1.0 to remote repository origin
+git push origin v1.0
+# push all tags to remote repository origin
+git push origin --tags
+# remove tag v0.9 in remove repository origin
+git push origin :refs/tags/v0.9
+# show the detail for tagged commit v0.1
+git show v0.1
 
 # record file change in working directory to stage zone of repository
 git add 'file'
